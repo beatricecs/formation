@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import unittest
 
 @dataclass
 class Produit:
@@ -13,6 +14,8 @@ class Lignes_facture:
     @property
     def montant(self):
         return self.produit.prix * self.quantite
+
+        #return self.produit.prix * self.quantite
         #self.montant = produit.prix * quantite
 
     def afficher_lignes_facture(self):
@@ -22,7 +25,6 @@ class Lignes_facture:
 
 class Facture:
     def __init__(self, facture_lignes, num_fact = 0, client = None):
-        assert isinstance(num_fact, int), " Numero non-entier, instance de " + str(type(num_fact))
 
         self.num_fact = num_fact + 1
         self.num_fact = 'INV_2018/000' + str(self.num_fact)
@@ -39,22 +41,57 @@ class Facture:
         print("Total avec tva=%s"%total)
 
 
-def test_facture():
-    telephone1 = Produit('Iphone6', 800.0)
-    coque = Produit('Coque Protection', 20.0)
-    facture_lignes = []
+# def test_facture():
+#     telephone1 = Produit('Iphone6', 800.0)
+#     coque = Produit('Coque Protection', 20.0)
+#     facture_lignes = []
+#
+#     lignes_facture =  Lignes_facture(telephone1, 1)
+#     facture_lignes.append(lignes_facture)
+#     lignes_facture.afficher_lignes_facture()
+#
+#     lignes_facture =  Lignes_facture(coque, 2)
+#     facture_lignes.append(lignes_facture)
+#
+#     lignes_facture.afficher_lignes_facture()
+#
+#     facture = Facture(facture_lignes)
+#     facture.calcul_facture()
 
-    lignes_facture =  Lignes_facture(telephone1, 1)
-    facture_lignes.append(lignes_facture)
-    lignes_facture.afficher_lignes_facture()
+class  ProduitTestCase(unittest.TestCase):
+    def test_product_creation(self):
+        produit = Produit('Iphone6', 800)
 
-    lignes_facture =  Lignes_facture(coque, 2)
-    facture_lignes.append(lignes_facture)
+        self.assertEqual(produit.nom, 'Iphone6')
+        self.assertEqual(produit.prix, 800.0)
 
-    lignes_facture.afficher_lignes_facture()
+    def test_ligne_facture(self):
+        facture_lignes = []
+        produit = Produit('Iphone6', 800)
+        lignes_facture = Lignes_facture(produit, 1)
+        self.assertEqual(lignes_facture.montant, 800)
 
-    facture = Facture(facture_lignes)
-    facture.calcul_facture()
 
-test_facture()
+        produit = Produit('Coque', 20)
+        lignes_facture = Lignes_facture(produit, 2)
+
+        self.assertEqual(lignes_facture.montant, 40)
+        lignes_facture.afficher_lignes_facture()
+
+    def test_facture(self):
+        facture_lignes = []
+        produit = Produit('Iphone6', 800)
+
+        lignes_facture = Lignes_facture(produit, 1)
+        facture_lignes.append(lignes_facture)
+        facture = Facture(facture_lignes)
+        facture.calcul_facture()
+
+        self.assertEqual(facture.num_fact, 'INV_2018/0001')
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+    #'test_facture()
 
