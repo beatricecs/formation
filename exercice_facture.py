@@ -6,6 +6,11 @@ class Produit:
     nom : str
     prix : float = 0.0
 
+def create_product(nom, prix):
+    assert isinstance (nom, str) and len (nom.strip()) > 0
+    assert isinstance (prix, float) and price > 0.0
+    return produit(nom,prix)
+
 @dataclass
 class Lignes_facture:
     produit : str
@@ -14,9 +19,6 @@ class Lignes_facture:
     @property
     def montant(self):
         return self.produit.prix * self.quantite
-
-        #return self.produit.prix * self.quantite
-        #self.montant = produit.prix * quantite
 
     def afficher_lignes_facture(self):
         #print("Produit:%s Quantite %s Prix %s Montant %s" % (self.produit.nom, self.quantite, self.produit.prix, self.montant,))

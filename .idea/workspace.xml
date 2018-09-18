@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64fd3acc-7295-4c48-b5a2-e254b86cbf85" name="Default Changelist" comment="" />
+    <list default="true" id="64fd3acc-7295-4c48-b5a2-e254b86cbf85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/formation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/formation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercice_facture.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercice_facture.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,10 +17,11 @@
     <session id="-1659000488">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -30,31 +36,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1608" />
+          <entry key="py" value="3434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1608" />
+          <entry key="Python" value="3434" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exercice_facture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+            <state relative-caret-position="210">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
-                <marker date="1537178677243" expanded="true" signature="14:19" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="97:98" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="120:121" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="120:492" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="506:511" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="723:898" ph="..." />
-                <marker date="1537178677243" expanded="true" signature="899:938" ph="..." />
+                <element signature="e#0#33#0" expanded="true" />
+                <marker date="1537264438891" expanded="true" signature="76:81" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="256:287" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="285:286" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="319:320" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="319:754" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="491:500" ph="..." />
+                <marker date="1537264438891" expanded="true" signature="768:773" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,7 +89,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="76" />
     <option name="y" value="50" />
-    <option name="width" value="1400" />
+    <option name="width" value="1401" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -104,6 +111,9 @@
         </subPane>
       </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,24 +168,33 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="76" y="50" width="1400" height="1000" extended-state="0" />
+    <frame x="76" y="50" width="1401" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981844" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32988507" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32988507" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32988507" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32988507" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32988507" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -187,16 +206,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/exercice_facture.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        <state relative-caret-position="210">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
-            <marker date="1537178677243" expanded="true" signature="14:19" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="97:98" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="120:121" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="120:492" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="506:511" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="723:898" ph="..." />
-            <marker date="1537178677243" expanded="true" signature="899:938" ph="..." />
+            <element signature="e#0#33#0" expanded="true" />
+            <marker date="1537264438891" expanded="true" signature="76:81" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="256:287" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="285:286" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="319:320" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="319:754" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="491:500" ph="..." />
+            <marker date="1537264438891" expanded="true" signature="768:773" ph="..." />
           </folding>
         </state>
       </provider>
