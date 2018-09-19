@@ -1,4 +1,5 @@
 import requests
+import unittest
 import pytest
 import responses
 from prettyprinter import cpprint
@@ -15,6 +16,15 @@ MOCK_USER = {
             'name':dict(title='Monsieur', first='Stephane', last='Wirtel'),
              'login': dict(username='matrixise'),
            'gender': 'male',
+        }]
+    }
+
+FEMALE_MOCK_USER = {
+        'results': [{
+            'email': 'beatrice.cs31@gmail.com',
+            'name':dict(title='Madame', first='Beatrice', last='Carles'),
+            'login': dict(username='beatricecs'),
+           'gender': 'female',
         }]
     }
 
@@ -48,7 +58,6 @@ class HttpNotFound(Exception):
 def get_user():
     #import pdb;pdb.set_trace()
 
-
     try :
         response = requests.get('https://randomuser.me/api/')
         # print(response.status_code)
@@ -75,7 +84,8 @@ def get_user():
         raise APIUnreachableException()
 
 
-
+#@pytest.mark.skip('in progress')
+# specifique unittest mais compatible pytest
 class  GetUserTestCase(unittest.TestCase):
     # @unittest.skip('disable')
     @responses.activate
@@ -101,14 +111,31 @@ class  GetUserTestCase(unittest.TestCase):
         with self.assertRaises(APIUnreachableException):
             user = get_user()
 
-    @mock.patch('ex_demo_mock.get_user')
-    def test(self, mock_get_user):
-        # avec mock on ne passe pas dans get_user c'est redéfini
-        mock_get_user.return_value = User.create_from_api(MOCK_USER)
-        #print('essai=%s'%mock_get_user.return_value)
-        user = get_user()
-        self.assertEqual(user.firstname, 'Stephane')
+class TestUser:
+    def test(self, mocker):
+        user = User.create_from_api(MOCK_USER)
+        mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
+        assert user.firstname == 'Stephane'
 
+def say_hello():
+    user = get_user()
+    if user.gender == 'male':
+        return 'Lord'
+    else:
+        return 'Lady'
+
+class TestSayHello:
+    def test_hi_lord(self, mocker):
+        user = User.create_from_api(MOCK_USER)
+        mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
+        value = say_hello()
+        assert value == 'Lord'
+
+    def test_hi_lady(self, mocker):
+        user = User.create_from_api(FEMALE_MOCK_USER)
+        mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
+        value = say_hello()
+        assert value == 'Lady'
 
 def main():
     try:
