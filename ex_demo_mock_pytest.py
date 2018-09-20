@@ -11,22 +11,22 @@ import logging
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
 MOCK_USER = {
-        'results': [{
-            'email': 'stephane@wirtel.be',
-            'name':dict(title='Monsieur', first='Stephane', last='Wirtel'),
-             'login': dict(username='matrixise'),
-           'gender': 'male',
-        }]
-    }
+    'results': [{
+        'email': 'stephane@wirtel.be',
+        'name':dict(title='Monsieur', first='Stephane', last='Wirtel'),
+        'login': dict(username='matrixise'),
+        'gender': 'male',
+    }]
+}
 
 FEMALE_MOCK_USER = {
-        'results': [{
-            'email': 'beatrice.cs31@gmail.com',
-            'name':dict(title='Madame', first='Beatrice', last='Carles'),
-            'login': dict(username='beatricecs'),
-           'gender': 'female',
-        }]
-    }
+    'results': [{
+        'email': 'beatrice.cs31@gmail.com',
+        'name':dict(title='Madame', first='Beatrice', last='Carles'),
+        'login': dict(username='beatricecs'),
+        'gender': 'female',
+    }]
+}
 
 @dataclass
 class User:
@@ -58,7 +58,7 @@ class HttpNotFound(Exception):
 def get_user():
     #import pdb;pdb.set_trace()
 
-    try :
+    try:
         response = requests.get('https://randomuser.me/api/')
         # print(response.status_code)
         logging.info('web service %d', response.status_code)
@@ -142,9 +142,9 @@ def main():
         user = get_user()
         logging.debug(user)
     except APIUnreachableException:
-        print ('le serveur est injoignable')
+        print('le serveur est injoignable')
     except HttpNotFound:
-        print ('Le serveur n''existe pas')
+        print('Le serveur n''existe pas')
 
 if __name__ == '__main__':
     # unittest.main()
