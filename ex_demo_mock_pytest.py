@@ -28,6 +28,23 @@ FEMALE_MOCK_USER = {
     }]
 }
 
+USERS = [
+    ('MALE_MOCK_USER', 'Lord'),
+    ('FEMALE_MOCK_USER', 'Lady')
+]
+
+@pytest.fixture(params=USERS)  # fixture permet de parcourir la liste user
+def user_info(request):   # mot request est propre à pytest
+    user = User.create_from_api(request.param[0])
+    yield user, request.param[1]
+
+@pytest.fixture(params=USERS)
+def user_info(request):
+    user = User.create_from_api(request.param[0])
+    mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
+    yield user, request.param[1]
+
+
 @dataclass
 class User:
     gender: str
@@ -136,6 +153,20 @@ class TestSayHello:
         mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
         value = say_hello()
         assert value == 'Lady'
+
+    @pytest.mark.parametrize("mock_user_title", USERS) #equivalent à test_hi_lord + test_hi_lady
+    def test(selfself, mocker, title,user_id):
+        user = User.create_from_api(mock_user)
+        mocker.path('ex_demo_pytest.get_user', return_value=user)
+        assert say_hello() == title
+
+    def text_fixture(selfself, mocker,user_info):
+        mocker.patch('ex_demo_mock_pytest.get_user', return_value=user)
+        assert say_hello() == title
+
+    def text_fixture2(selfself, mocker, user_info):
+        assert say_hello() == title
+
 
 def main():
     try:
